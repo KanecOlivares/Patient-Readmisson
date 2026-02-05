@@ -1,6 +1,7 @@
 import csv
 import json
 from pathlib import Path
+from utils import is_debug_mode, activate_debug
 
 
 IDS_MAPPING_PATH = Path("data/raw/IDS_mapping.csv")
@@ -57,15 +58,16 @@ def update_schema(schema_path: Path, id_values: dict, dry_run: bool = True) -> N
 
 
 def main() -> None:
+    activate_debug()
     id_values = extract_id_values(IDS_MAPPING_PATH)
 
     # Dry-run to show what would be updated
-    update_schema(RAW_SCHEMA_PATH, id_values, dry_run=True)
-    update_schema(MODEL_SCHEMA_PATH, id_values, dry_run=True)
-
-    # Uncomment the lines below to apply changes to the schema files.
-    # update_schema(RAW_SCHEMA_PATH, id_values, dry_run=False)
-    # update_schema(MODEL_SCHEMA_PATH, id_values, dry_run=False)
+    if is_debug_mode():
+        update_schema(RAW_SCHEMA_PATH, id_values, dry_run=True)
+        update_schema(MODEL_SCHEMA_PATH, id_values, dry_run=True)
+    else: 
+        update_schema(RAW_SCHEMA_PATH, id_values, dry_run=False)
+        update_schema(MODEL_SCHEMA_PATH, id_values, dry_run=False)
 
 
 if __name__ == "__main__":

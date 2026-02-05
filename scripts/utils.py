@@ -13,11 +13,11 @@ def is_debug_mode():
 def activate_debug():
     """Set the DEBUG flag from command-line arguments when provided."""
     global DEBUG
-    if (len(sys.argv)) > 2:
-        DEBUG = int(sys.argv[2])
+    if (len(sys.argv)) > 1:
+        DEBUG = int(sys.argv[1])
 
 def activate_seed():
     """Set the random SEED from command-line arguments or fall back to default value shown on top."""
     global SEED, DEBUG
-    if (len(sys.argv)) > 1:
-        SEED = sys.argv[1]
+    if (len(sys.argv)) > 2:
+        SEED = sys.argv[2]
