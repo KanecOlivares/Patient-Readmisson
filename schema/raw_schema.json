@@ -55,55 +55,371 @@
     "readmitted"
   ],
   "features": [
-    {"name": "encounter_id", "type": "int", "required": true, "allowed_values": []},
-    {"name": "patient_nbr", "type": "int", "required": true, "allowed_values": []},
-    {"name": "race", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "gender", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "age", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "weight", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "admission_type_id", "type": "int", "required": true, "allowed_values": [1, 2, 3, 4, 5, 6, 7, 8]},
-    {"name": "discharge_disposition_id", "type": "int", "required": true, "allowed_values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]},
-    {"name": "admission_source_id", "type": "int", "required": true, "allowed_values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]},
-    {"name": "time_in_hospital", "type": "int", "required": true, "allowed_values": []},
-    {"name": "payer_code", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "medical_specialty", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "num_lab_procedures", "type": "int", "required": true, "allowed_values": []},
-    {"name": "num_procedures", "type": "int", "required": true, "allowed_values": []},
-    {"name": "num_medications", "type": "int", "required": true, "allowed_values": []},
-    {"name": "number_outpatient", "type": "int", "required": true, "allowed_values": []},
-    {"name": "number_emergency", "type": "int", "required": true, "allowed_values": []},
-    {"name": "number_inpatient", "type": "int", "required": true, "allowed_values": []},
-    {"name": "diag_1", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "diag_2", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "diag_3", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "number_diagnoses", "type": "int", "required": true, "allowed_values": []},
-    {"name": "max_glu_serum", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "A1Cresult", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "metformin", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "repaglinide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "nateglinide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "chlorpropamide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "glimepiride", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "acetohexamide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "glipizide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "glyburide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "tolbutamide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "pioglitazone", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "rosiglitazone", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "acarbose", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "miglitol", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "troglitazone", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "tolazamide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "examide", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "citoglipton", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "insulin", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "glyburide-metformin", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "glipizide-metformin", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "glimepiride-pioglitazone", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "metformin-rosiglitazone", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "metformin-pioglitazone", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "change", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "diabetesMed", "type": "categorical", "required": true, "allowed_values": []},
-    {"name": "readmitted", "type": "categorical", "required": true, "allowed_values": []}
+    {
+      "name": "encounter_id",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "patient_nbr",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "race",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "gender",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "age",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "weight",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "admission_type_id",
+      "type": "int",
+      "required": true,
+      "allowed_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "discharge_disposition_id",
+      "type": "int",
+      "required": true,
+      "allowed_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "admission_source_id",
+      "type": "int",
+      "required": true,
+      "allowed_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "name": "time_in_hospital",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "payer_code",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "medical_specialty",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "num_lab_procedures",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "num_procedures",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "num_medications",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "number_outpatient",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "number_emergency",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "number_inpatient",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "diag_1",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "diag_2",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "diag_3",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "number_diagnoses",
+      "type": "int",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "max_glu_serum",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "A1Cresult",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "metformin",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "repaglinide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "nateglinide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "chlorpropamide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "glimepiride",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "acetohexamide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "glipizide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "glyburide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "tolbutamide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "pioglitazone",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "rosiglitazone",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "acarbose",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "miglitol",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "troglitazone",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "tolazamide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "examide",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "citoglipton",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "insulin",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "glyburide-metformin",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "glipizide-metformin",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "glimepiride-pioglitazone",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "metformin-rosiglitazone",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "metformin-pioglitazone",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "change",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "diabetesMed",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    },
+    {
+      "name": "readmitted",
+      "type": "categorical",
+      "required": true,
+      "allowed_values": []
+    }
   ]
 }

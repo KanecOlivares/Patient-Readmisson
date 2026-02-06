@@ -61,13 +61,8 @@ def main() -> None:
     activate_debug()
     id_values = extract_id_values(IDS_MAPPING_PATH)
 
-    # Dry-run to show what would be updated
-    if is_debug_mode():
-        update_schema(RAW_SCHEMA_PATH, id_values, dry_run=True)
-        update_schema(MODEL_SCHEMA_PATH, id_values, dry_run=True)
-    else: 
-        update_schema(RAW_SCHEMA_PATH, id_values, dry_run=False)
-        update_schema(MODEL_SCHEMA_PATH, id_values, dry_run=False)
+    update_schema(RAW_SCHEMA_PATH, id_values, dry_run=is_debug_mode())
+    update_schema(MODEL_SCHEMA_PATH, id_values, dry_run=is_debug_mode())
 
 
 if __name__ == "__main__":
